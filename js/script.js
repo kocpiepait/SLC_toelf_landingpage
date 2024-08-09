@@ -19,3 +19,25 @@ window.onclick = function (event) {
     popup.style.display = "none";
   }
 };
+
+document
+  .querySelector(".mobile-menu-button")
+  .addEventListener("click", function () {
+    document.querySelector(".mobile-menu").classList.toggle("active");
+  });
+
+document.addEventListener("click", function (event) {
+  const menu = document.querySelector(".mobile-menu");
+  const button = document.querySelector(".mobile-menu-button");
+
+  if (!menu.contains(event.target) && !button.contains(event.target)) {
+    menu.classList.remove("active");
+  }
+});
+
+window.addEventListener("scroll", function () {
+  const menu = document.querySelector(".mobile-menu");
+  if (menu.classList.contains("active")) {
+    menu.classList.remove("active");
+  }
+});

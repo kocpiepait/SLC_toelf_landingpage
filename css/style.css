@@ -8,62 +8,56 @@ body {
 
 header {
   background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ddd;
+  padding: 10px;
 }
 
 .header-content {
   display: flex;
   align-items: center;
-  width: 100%;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo {
-  max-width: 120px;
-  margin-right: 20px;
+  max-width: 150px;
+  height: auto;
 }
 
 .contact-info {
   display: flex;
   align-items: center;
-  flex-grow: 1;
-  justify-content: flex-end;
+  gap: 30px;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  margin-right: 20px;
+  gap: 10px;
 }
 
 .contact-item i {
+  font-size: 20px;
   color: #054a85;
-  font-size: 1.2em;
-  margin-right: 8px;
 }
 
 .contact-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .contact-title {
   font-weight: bold;
-  color: #333;
 }
 
 .contact-detail {
-  color: #666;
+  color: #333;
 }
 
-.divider {
-  margin: 0 15px;
-  color: #333;
-  font-size: 1.2em;
+.contact-item:not(:last-child)::after {
+  content: "|";
+  color: #054a85;
+  margin-left: 15px;
 }
 
 /* Hero Section */
@@ -102,33 +96,33 @@ header {
 }
 
 #moreInfoBtn {
-  background-color: #ff3333; /* Red background */
-  color: white; /* White text */
+  background-color: #ff3333;
+  color: white;
   border: none;
   padding: 15px 30px;
   font-size: 18px;
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.1s, box-shadow 0.1s; /* Smooth transitions */
+  transition: background-color 0.3s, transform 0.1s, box-shadow 0.1s;
   display: inline-flex;
   align-items: center;
 }
 
 #moreInfoBtn:hover {
-  background-color: #e62e2e; /* Slightly darker red on hover */
-  transform: translateY(-3px); /* Lift the button slightly */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+  background-color: #e62e2e;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #moreInfoBtn:active {
-  background-color: #cc2929; /* Darker red on active */
-  transform: translateY(2px); /* Push the button down slightly */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Less shadow to create pressed effect */
+  background-color: #cc2929;
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #moreInfoBtn i {
-  margin-left: 10px; /* Add some space between text and icon */
+  margin-left: 10px;
 }
 
 .hero-image {
@@ -144,8 +138,6 @@ header {
 .hero-image img {
   width: 80%;
   object-fit: contain;
-  /* position: relative;
-  top: 4.2rem; */
 }
 
 /* Pop-up */
@@ -160,7 +152,7 @@ header {
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
-  animation: fadeIn 0.5s; /* Add fade-in animation */
+  animation: fadeIn 0.5s;
 }
 
 .popup-content {
@@ -171,7 +163,7 @@ header {
   width: 80%;
   max-width: 600px;
   border-radius: 10px;
-  animation: slideIn 0.5s; /* Add slide-in animation */
+  animation: slideIn 0.5s;
 }
 
 .close {
@@ -408,8 +400,9 @@ main {
 
 /* Perelngkapan section */
 .requirements {
-  padding: 20px;
+  padding: 20px 0;
   text-align: center;
+  width: 100%;
 }
 
 .requirements h2 {
@@ -459,11 +452,13 @@ main {
 }
 
 .disclaimer-section {
-  padding: 40px 20px;
   background-color: #f7f9fc;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
 }
 
 .disclaimer-section h2 {
@@ -654,4 +649,412 @@ footer {
 
 .footer-social a:hover {
   color: #ff3333;
+}
+
+.mobile-menu-button {
+  display: none;
+}
+
+/* Responsif untuk perangkat mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .hero-image img {
+    width: 100%;
+    top: 0;
+  }
+
+  .benefit-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefit-card-wrapper {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .test-structure img {
+    width: 100%;
+  }
+
+  .test-structure .test-info-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .test-structure .test-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .requirements-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .requirement-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .disclaimer-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .disclaimer-card {
+    width: 100%;
+  }
+
+  .registration {
+    padding: 20px;
+  }
+
+  .info-list li {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .header-content .contact-info {
+    font-size: 14px;
+  }
+
+  .hero-text h1 {
+    font-size: 2em;
+  }
+
+  .hero-text p {
+    font-size: 1em;
+  }
+
+  #moreInfoBtn {
+    font-size: 14px;
+  }
+
+  .benefits-section h2 {
+    font-size: 24px;
+  }
+
+  .benefits-section .benefit-card h3 {
+    font-size: 16px;
+  }
+
+  .benefits-section .benefit-card p {
+    font-size: 14px;
+  }
+
+  .test-structure h2 {
+    font-size: 24px;
+  }
+
+  .test-structure .test-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .test-structure .test-info p {
+    font-size: 0.9rem;
+  }
+
+  .test-integrity h2 {
+    font-size: 1.4em;
+  }
+
+  .test-integrity p {
+    font-size: 1em;
+  }
+
+  footer h3 {
+    font-size: 18px;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+}
+
+/* Responsif untuk tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 15px;
+  }
+
+  .contact-info {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #054a85;
+  }
+
+  .mobile-menu {
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    top: 140px;
+    left: 0;
+    right: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    width: 70%;
+    text-align: center;
+    z-index: 1000;
+    margin: 0 auto;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  .mobile-menu.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-menu .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .mobile-menu .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mobile-menu .contact-item i {
+    font-size: 20px;
+    color: #054a85;
+  }
+
+  .mobile-menu .contact-item:not(:last-child)::after {
+    content: none;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .hero-image img {
+    width: 100%;
+  }
+
+  .benefit-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefit-card-wrapper {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .test-structure .test-info-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .test-info-wrapper {
+    gap: 1em;
+  }
+
+  .test-info:nth-of-type(2) {
+    flex-direction: column-reverse;
+  }
+
+  .requirements-cards {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .requirement-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .disclaimer-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .disclaimer-card {
+    width: 90%;
+  }
+
+  .header-content .contact-info {
+    font-size: 15px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2em;
+  }
+
+  .hero-text p {
+    font-size: 1.1em;
+  }
+
+  #moreInfoBtn {
+    font-size: 16px;
+  }
+
+  .benefits-section h2 {
+    font-size: 28px;
+  }
+
+  .benefits-section .benefit-card h3 {
+    font-size: 18px;
+  }
+
+  .benefits-section .benefit-card p {
+    font-size: 14px;
+  }
+
+  .test-structure h2 {
+    font-size: 28px;
+  }
+
+  .test-structure .test-info h3 {
+    font-size: 1.6rem;
+  }
+
+  .test-structure .test-info p {
+    font-size: 1rem;
+  }
+
+  .test-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .test-info .info-content-2 {
+    text-align: center;
+  }
+
+  .test-info img {
+    margin-top: 20px;
+  }
+
+  .requirement-card {
+    width: 90%;
+  }
+
+  .test-integrity h2 {
+    font-size: 1.6em;
+  }
+
+  .test-integrity p {
+    font-size: 1.1em;
+  }
+
+  footer h3 {
+    font-size: 20px;
+  }
+
+  footer p {
+    font-size: 15px;
+  }
+}
+
+/* Responsif untuk layar besar (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .mobile-menu-button {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .hero-content {
+    gap: 40px;
+  }
+
+  .benefit-cards {
+    justify-content: space-between;
+  }
+
+  .test-structure .test-info-wrapper {
+    gap: 5rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5em;
+  }
+
+  .hero-text p {
+    font-size: 1.2em;
+  }
+
+  #moreInfoBtn {
+    font-size: 18px;
+  }
+
+  .benefits-section h2 {
+    font-size: 32px;
+  }
+
+  .benefits-section .benefit-card h3 {
+    font-size: 20px;
+  }
+
+  .benefits-section .benefit-card p {
+    font-size: 16px;
+  }
+
+  .test-structure h2 {
+    font-size: 32px;
+  }
+
+  .test-structure .test-info h3 {
+    font-size: 1.8rem;
+  }
+
+  .test-structure .test-info p {
+    font-size: 1.2rem;
+  }
+
+  .test-integrity h2 {
+    font-size: 1.8em;
+  }
+
+  .test-integrity p {
+    font-size: 1.2em;
+  }
+
+  footer h3 {
+    font-size: 24px;
+  }
+
+  footer p {
+    font-size: 16px;
+  }
 }
